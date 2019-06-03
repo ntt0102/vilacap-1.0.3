@@ -42,6 +42,7 @@
         methods: {
             register(){
                 var app = this
+                alert(0)
                 this.$auth.register({
                     params: {
                         name: app.name,
@@ -49,9 +50,11 @@
                         password: app.password
                     }, 
                     success: function () {
+                        alert(1)
                         app.success = true
                     },
                     error: function (resp) {
+                        console.log(2)
                         app.error = true;
                         app.errors = resp.response.data.errors;
                     },

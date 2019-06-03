@@ -2919,6 +2919,7 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     register: function register() {
       var app = this;
+      alert(0);
       this.$auth.register({
         params: {
           name: app.name,
@@ -2926,9 +2927,11 @@ __webpack_require__.r(__webpack_exports__);
           password: app.password
         },
         success: function success() {
+          alert(1);
           app.success = true;
         },
         error: function error(resp) {
+          console.log(2);
           app.error = true;
           app.errors = resp.response.data.errors;
         },
@@ -53557,7 +53560,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_axios__WEBPACK_IMPORTED_MODULE_3___default.a, axios__WEBPACK_IMPORTED_MODULE_2___default.a);
 axios__WEBPACK_IMPORTED_MODULE_2___default.a.defaults.baseURL = 'http://localhost:8000/api';
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
-  mode: 'history',
+  // mode: 'history',
   routes: [{
     path: '/',
     name: 'home',
